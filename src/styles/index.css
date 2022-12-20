@@ -1,7 +1,635 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .header {
-    @apply py-6 w-full;
+    @apply py-6 w-full z-50 relative;
+}
+
+.container {
+    @apply w-4/5 max-w-7xl mx-auto;
+}
+
+.nav-item {
+    @apply mr-8;
+}
+
+.link {
+    @apply font-bold text-color-dark leading-6 transition-colors;
+}
+
+.selected-lang {
+    @apply flex items-center font-bold ml-auto py-1.5 px-3 rounded-3xl cursor-pointer transition-all
+}
+
+.selected-lang:hover {
+    @apply bg-color-200
+}
+
+.btn {
+    @apply text-white font-bold py-6 px-8 rounded-full uppercase transition-all shadow-xl shadow-inherit text-sm border-none;
+}
+
+.btn-sm {
+    @apply text-white py-3 px-6 rounded-full uppercase transition-all font-bold border-none text-xs;
+}
+
+.btn-border {
+    @apply text-color-blue uppercase text-sm py-[23px] px-14 border border-color-blue rounded-[50px] font-semibold block w-max transition-all hover:bg-color-blue hover:text-white
+}
+
+.btn-border-sm {
+    @apply text-color-blue uppercase text-[12px] py-3 px-6 border border-color-blue rounded-[50px] font-semibold block w-max transition-all hover:bg-color-blue hover:text-white
+}
+
+.title-1 {
+    @apply font-bold text-color-dark text-5xl uppercase;
+}
+
+.title-1.white {
+    @apply text-white;
+}
+
+.title-2 {
+    @apply font-bold text-color-dark text-4xl leading-[1em];
+}
+
+.title-2.white {
+    @apply text-white;
+}
+
+.title-3 {
+    @apply font-bold text-3.5xl leading-[1.188em];
+}
+
+.title-4 {
+    @apply font-bold text-color-dark text-2xl;
+}
+
+.title-5 {
+    @apply font-bold text-color-dark text-opacity-20 text-2xl;
+}
+
+.slide-1__info {
+    width: 45.15625%;
+}
+
+.slide-1__gallery {
+    width: 48.75%;
+}
+
+.img-bordered-block {
+    @apply w-full h-auto bg-color-gold overflow-hidden before:block relative
+}
+
+.img-bordered-block img {
+    @apply w-imgBorderedBox h-imgBorderedBox absolute  -translate-y-2/4 -translate-x-1/2 object-cover object-center top-2/4 left-1/2
+}
+
+.cube {
+    @apply w-full before:pb-[100%] before:block
+}
+
+.js-hero-slider .swiper-slide:not(.swiper-slide-active){
+    opacity: 0 !important;
+  }
+
+.hero-swiper-pagination {
+    width: max-content !important;
+    bottom: 123px !important;
+    left: 43px !important;
+}
+
+.hero-swiper-pagination .swiper-pagination-bullet {
+    width: 5px;
+    height: 5px;
+    margin: 0 16px 0 0 !important;
+}
+
+.hero-swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: #FF4A35;
+}
+
+.text-group > p {
+    margin-bottom: 16px
+}
+
+.about-tip__title {
+    @apply text-color-dark font-bold text-7xl mb-[14px] text-center
+}
+
+.about-tip__title span {
+    @apply text-2xl -ml-3
+}
+
+.about-tip__divider {
+    @apply w-[80px] h-[2px] mx-auto mb-4
+}
+
+.about-tip__text {
+    @apply text-color-dark text-center max-w-[270px] mx-auto
+}
+
+.program-card {
+    @apply w-full rounded-[20px] overflow-hidden border border-transparent transition-all
+}
+
+.program-card__img {
+    @apply w-full relative before:block before:pb-[49.385%] bg-gray-300 flex
+}
+
+.program-card__img img {
+    @apply w-full h-full object-cover object-center max-h-[200px]
+}
+
+.program-card__body {
+    @apply px-8 pt-[18px] pb-8 bg-white
+}
+
+.program-card__pretitle {
+    @apply text-color-dark text-[12px] leading-[1.5em]
+}
+
+.program-card__title {
+    @apply text-xl font-bold mb-[5px] -mt-[3px]
+}
+
+.program-card__text {
+    @apply text-color-dark text-sm mb-6 min-h-[100px]
+}
+
+.program-card__label {
+    @apply flex items-center text-color-dark text-sm font-semibold px-3 py-1.5 rounded-[10px] bg-color-100
+}
+
+.program-card__label:not(:last-child) {
+    @apply mr-2;
+}
+
+.program-card__label img, .program-card__label svg {
+    @apply mr-2;
+}
+
+.user-icon-wrapper {
+    @apply relative
+}
+
+.user-icon {
+    @apply w-8 h-8 rounded-full border border-[#B9C8D3] overflow-hidden transition-all  hover:cursor-pointer;
+}
+
+.user-icon-wrapper:not(:last-child) {
+    @apply mr-1;
+}
+
+.user-icon img {
+    @apply w-full h-full object-cover object-center;
+}
+
+.user-icon-info {
+    box-shadow: 0px 10px 20px rgba(15, 144, 209, 0.1);
+
+    @apply absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[125%] rounded-[100px] overflow-hidden z-50 -mt-[10px] transition-all opacity-0 invisible
+}
+
+img.user-icon-info__img {
+    @apply w-[152px] h-[152px] min-w-[152px] mr-0 border-[3px] rounded-full object-cover object-center
+}
+
+.user-icon-info__body {
+    @apply pt-[9px] pb-8 bg-white text-center px-2
+}
+
+.user-icon-info__title {
+    @apply font-bold text-color-dark text-base leading-[1.125em] mb-1
+}
+
+.user-icon-info__text {
+    @apply text-xs text-color-gray font-normal leading-[1.167em]
+}
+
+.user-icon-wrapper:hover .user-icon-info {
+    @apply opacity-100 visible -translate-y-full
+}
+
+.program-card__footer {
+    @apply flex items-center justify-between
+}
+
+.program-card__price {
+    @apply text-[2rem] leading-[1.094em] tracking-tighter font-semibold flex items-end
+}
+
+.program-card__price strong {
+    @apply font-semibold
+}
+
+.program-card__price strong span {
+    @apply text-base -ml-[2px]
+}
+
+.program-card__oldprice {
+    @apply font-semibold text-color-dark text-base ml-3 tracking-tighter 
+}
+
+strong.program-card__oldprice span:not(.currency) {
+    @apply relative after:block after:w-full after:h-[2px] after:absolute after:bg-color-red after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rotate-[-10deg]
+}
+
+strong.program-card__oldprice span.currency {
+    @apply text-[8px]
+}
+
+.program-card__likes {
+    @apply text-base font-bold text-white absolute top-[23px] left-6 py-1 pl-3 pr-4 rounded-[10px] flex items-center  transition-all
+}
+
+.program-card__likes img {
+    @apply w-[20px] h-auto mr-2
+}
+
+.program-card__likes .extra {
+    @apply text-xs font-normal ml-2 whitespace-nowrap  invisible absolute
+}
+
+.program-card__likes:hover .extra {
+    @apply  visible static
+}
+
+.swiper.js-edu-slider {
+    overflow: visible;
+}
+
+.js-edu-slider-pagination.swiper-pagination-progressbar {
+    @apply static mt-12 bg-[#1B1D2B] rounded-4xl h-[2px]
+}
+
+.js-edu-slider-pagination.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    @apply bg-color-blue rounded-4xl
+}
+
+.way-tabs-list {
+    @apply flex items-center justify-center border-b-2 w-max mx-auto mb-[105px];
+}
+
+.way-tab {
+    @apply flex items-center justify-center min-w-[210px] relative py-4 cursor-pointer text-color-gray after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full  after:transition-all after:bg-transparent transition-all
+}
+
+.way-tab svg {
+    @apply mr-2
+}
+
+.way-tab svg,
+.way-tab svg path {
+    @apply transition-all;
+}
+
+.way-tab.active {
+    @apply text-color-dark 
+}
+
+.way-tab:first-child.active svg path {
+    @apply fill-color-red
+}
+
+.way-tab:first-child.active {
+    @apply after:bg-color-red
+}
+
+.way-tab:nth-child(2).active svg path {
+    @apply fill-color-blue
+}
+
+.way-tab:nth-child(2).active {
+    @apply after:bg-color-blue
+}
+
+.way-tab:nth-child(3).active svg path {
+    @apply fill-color-orange
+}
+
+.way-tab:nth-child(3).active {
+    @apply after:bg-color-orange
+}
+
+.way-tab:nth-child(4).active svg path {
+    @apply fill-color-green
+}
+
+.way-tab:nth-child(4).active {
+    @apply after:bg-color-green
+}
+
+.way-wrapper .container {
+    @apply max-w-[1062px] mx-auto flex items-center justify-between
+}
+
+.way-title {
+    @apply font-bold
+}
+
+.swiper.js-way-slider {
+    @apply overflow-visible
+} 
+
+.success-list-wrapper {
+    width: calc(100% - 328px);
+    @apply pl-16 border-l-2 border-l-color-dark
+}
+
+.success-list {
+    @apply grid grid-cols-3 gap-x-16 gap-y-12
+}
+
+.success-list__icon {
+    @apply relative pl-4 z-0 mb-6
+}
+
+.success-list__title {
+    @apply text-xl leading-6 font-bold text-color-dark mb-2
+}
+
+.success-list__text {
+    @apply text-sm text-color-dark
+}
+
+.review-wrapper {
+    box-shadow: 0px 30px 50px rgba(15, 144, 209, 0.1);
+    @apply py-8 px-16 w-full max-w-[700px] mx-auto bg-white rounded-[70px] flex flex-col items-center
+}
+
+.review__title {
+    @apply text-xl leading-6 text-color-dark font-bold mb-2
+}
+
+.start-rating {
+    @apply flex items-center justify-center mb-5;
+}
+
+.start-rating svg {
+    @apply mx-[1px]
+}
+
+.review__message {
+    @apply text-sm text-color-dark text-center italic max-h-[140px] overflow-y-auto pr-[13px] -mr-4 mb-6
+}
+
+.review__message::-webkit-scrollbar,
+.map-popup__list::-webkit-scrollbar {
+    width: 2px;
+}
+
+.review__message::-webkit-scrollbar-track,
+.map-popup__list::-webkit-scrollbar-track {
+    @apply bg-[#DCE4EB]
+}
+
+.review__message::-webkit-scrollbar-thumb,
+.map-popup__list::-webkit-scrollbar-thumb {
+    @apply bg-color-blue
+}
+
+.review__user {
+    @apply text-center flex flex-col items-center;
+}
+
+.review__user-icon {
+    @apply w-16 relative after:block after:pb-[100%] flex overflow-hidden rounded-[15px] mb-2 border border-[#B9C8D3]
+}
+
+.review__user-icon img {
+    @apply w-full h-full object-cover object-center
+}
+
+.review__user-title {
+    @apply font-bold text-base text-color-dark
+}
+
+.review__user-location {
+    @apply text-xs leading-[1.5em]
+}
+
+.review-user-btn__icon {
+    @apply relative border-[2px] after:block after:pb-[100%] flex overflow-hidden 
+}
+
+.news-list {
+    @apply grid grid-cols-4 gap-8;
+    grid-template-areas:
+    "article-1 article-1 article-2 article-2"
+    "article-1 article-1 article-3 article-4"
+}
+
+.news-item {
+    @apply relative z-1 overflow-hidden rounded-[20px] p-8 min-h-[314px]
+}
+
+.news-item:first-child {
+   grid-area: article-1;
+   
+}
+.news-item:nth-child(2) {
+   grid-area: article-2;
+}
+
+.news-item:nth-child(3) {
+    grid-area: article-3;
+}
+  
+.news-item:nth-child(4) {
+    grid-area: article-4;
+}
+  
+.news-item__img {
+    @apply absolute top-0 left-0 bottom-0 right-0 w-full h-full object-cover object-center -z-1
+}
+
+.news-item__img img {
+    @apply w-full h-full object-cover object-center
+}
+
+.news-item__img::after {
+    content: '';
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 33.33%, rgba(0, 0, 0, 0.25) 66.67%, rgba(0, 0, 0, 0.75) 100%);
+    @apply w-full h-full absolute top-0 left-0 bottom-0 right-0
+}
+
+.news-item__label {
+    @apply py-2 px-[14px] rounded-[5px] text-xs text-white font-bold w-max mb-4
+}
+
+.news-item__title {
+    @apply text-white font-bold text-[2rem] leading-[1.094em]
+}
+
+.news-item__content {
+    @apply flex flex-col justify-end h-full
+}
+
+.news-item:nth-child(3) .news-item__title,
+.news-item:nth-child(4) .news-item__title {
+    @apply text-xl leading-6
+}
+
+.news-item:first-child {
+    @apply p-12
+}
+
+.footer-logo {
+    @apply max-w-[224px] w-full
+}
+
+.footer-logo img {
+    @apply w-full h-auto
+}
+
+.contact-label {
+    @apply text-xs leading-[1.5em] text-color-blue uppercase font-semibold mb-2 tracking-widest
+}
+
+.contact-tel {
+    @apply text-color-dark font-semibold text-[2rem] leading-[1em] mb-2
+}
+
+.contact-mail {
+    @apply font-semibold text-color-dark block w-max ml-auto
+}
+
+.footer-nav__item:not(:last-child) {
+    @apply mr-8
+}
+
+.socials__item:not(:last-child) {
+    @apply mr-4
+}
+
+.footer-nav__link {
+    @apply text-color-dark font-bold
+}
+
+.copy-divider {
+    @apply w-[1px] h-[18px] bg-[#434F6D] mx-4 
+}
+
+.copy {
+    @apply flex items-center text-xs leading-[1.5em] text-[#8A949F]
+}
+
+.copy a {
+    @apply text-color-blue
+}
+
+.policy-list {
+    @apply flex items-center mr-8
+}
+
+.policy-list__item:not(:last-child) {
+    @apply mr-4
+}
+
+.policy-list__link {
+    @apply text-xs leading-[1.5em] text-color-dark
+}
+
+#map { height: 720px; }
+
+.map-popup {
+    @apply absolute right-[16.2vw] py-12 pl-12 pr-6 bg-white rounded-[20px] z-[9999999999] w-11/12 max-w-[360px] transition-all top-32 opacity-0 invisible
+}
+
+.map-popup.active {
+    @apply top-[95px] opacity-100 visible;
+}
+
+.map-popup__title {
+    @apply font-bold text-color-dark text-2xl leading-[1.083em] mb-6
+}
+
+.map-popup__list {
+    @apply max-h-[358px] overflow-y-auto pr-[22px]
+}
+
+.map-popup__close {
+    @apply absolute top-4 right-4
+}
+
+.map-popup__item {
+    @apply py-6 border-b border-b-[#DDEBF6]
+}
+
+.map-popup__item:first-child {
+    @apply border-t border-t-[#DDEBF6]
+}
+
+.map-popup__item-name {
+    @apply text-base leading-[1.125em] text-color-blue font-bold
+}
+
+.map-popup__item-date,
+.map-popup__item-street {
+    @apply text-sm leading-[1.5em] text-color-gray
+}
+
+.map-popup__item-place {
+    @apply text-sm leading-[1.5em] text-color-dark mt-1
+}
+
+.select select {
+	display: none;
+}
+
+.select {
+	position: relative;
+	margin: 30px 0;
+}
+
+.select--active {
+	z-index: 1;
+}
+
+.select--active ~ .select {
+	z-index: 0;
+}
+
+.select__options {
+    box-shadow: 0px 4px 24px rgba(91, 117, 203, 0.26);
+    @apply absolute top-[120%] left-1/2 -translate-x-1/2 flex flex-col invisible bg-white w-[220px] overflow-hidden rounded-xl py-2
+}
+
+.select--active .select__options {
+	visibility: visible;
+}
+
+.select__toggle {
+    @apply flex items-center font-bold ml-auto py-1.5 px-3 rounded-3xl cursor-pointer uppercase transition-all
+}
+
+.select__toggle:hover {
+    @apply bg-color-200
+}
+
+.select__toggle img {
+    @apply mr-1
+}
+
+.select__option {
+    @apply flex items-center pl-8 pr-6 py-[10px] justify-between
+}
+
+.select__option:hover {
+    @apply bg-[#F1F9FF]
+}
+
+.select__option > div img {
+    @apply mr-2
+}
+
+.option-check {
+    @apply opacity-0
+}
+
+.select__option--active .option-check {
+    @apply opacity-100
 }
