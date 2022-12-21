@@ -4,19 +4,19 @@
 @tailwind utilities;
 
 .header {
-    @apply py-6 w-full z-50 relative;
+    @apply py-6 w-full z-50 relative -sm:py-4;
 }
 
 .container {
-    @apply w-4/5 max-w-7xl mx-auto;
+    @apply w-4/5 max-w-7xl mx-auto -xl:w-11/12 -sm:w-full -sm:px-4;
 }
 
 .nav-item {
-    @apply mr-8;
+    @apply mr-8 -xl:mr-4;
 }
 
 .link {
-    @apply font-bold text-color-dark leading-6 transition-colors;
+    @apply font-bold text-color-dark leading-6 transition-colors -xl:text-sm
 }
 
 .selected-lang {
@@ -28,7 +28,7 @@
 }
 
 .btn {
-    @apply text-white font-bold py-6 px-8 rounded-full uppercase transition-all shadow-xl shadow-inherit text-sm border-none;
+    @apply text-white font-bold py-6 px-8 rounded-full uppercase transition-all shadow-xl shadow-inherit text-sm border-none -sm:text-[10px] leading-[1.4em] -sm:py-5 -sm:px-6;
 }
 
 .btn-sm {
@@ -36,15 +36,15 @@
 }
 
 .btn-border {
-    @apply text-color-blue uppercase text-sm py-[23px] px-14 border border-color-blue rounded-[50px] font-semibold block w-max transition-all hover:bg-color-blue hover:text-white
+    @apply text-color-blue uppercase text-sm py-[23px] px-14 border border-color-blue rounded-[50px] font-semibold block w-max transition-all hover:bg-color-blue hover:text-white -sm:text-[10px] -sm:leading-[1.4em] -sm:py-5 
 }
 
 .btn-border-sm {
-    @apply text-color-blue uppercase text-[12px] py-3 px-6 border border-color-blue rounded-[50px] font-semibold block w-max transition-all hover:bg-color-blue hover:text-white
+    @apply text-color-blue uppercase text-[12px] py-3 px-6 border border-color-blue rounded-[50px] font-semibold block w-max transition-all hover:bg-color-blue hover:text-white whitespace-nowrap
 }
 
 .title-1 {
-    @apply font-bold text-color-dark text-5xl uppercase;
+    @apply font-bold text-color-dark text-5xl uppercase -xl:text-4xl -sm:text-[2rem] -sm:leading-[1em]
 }
 
 .title-1.white {
@@ -52,7 +52,7 @@
 }
 
 .title-2 {
-    @apply font-bold text-color-dark text-4xl leading-[1em];
+    @apply font-bold text-color-dark text-4xl leading-[1em] -xl:text-3xl -sm:text-2xl -sm:leading-[1em];
 }
 
 .title-2.white {
@@ -60,7 +60,7 @@
 }
 
 .title-3 {
-    @apply font-bold text-3.5xl leading-[1.188em];
+    @apply font-bold text-3.5xl leading-[1.188em] -sm:text-lg -sm:leading-[1.222em]
 }
 
 .title-4 {
@@ -72,11 +72,11 @@
 }
 
 .slide-1__info {
-    width: 45.15625%;
+    @apply w-[45.15625%] -lg:w-full -lg:text-center -lg:flex -lg:flex-col -lg:items-center
 }
 
 .slide-1__gallery {
-    width: 48.75%;
+    @apply w-[48.75%] -lg:w-[70%] -lg:mx-auto -sm:w-[85%]
 }
 
 .img-bordered-block {
@@ -99,6 +99,7 @@
     width: max-content !important;
     bottom: 123px !important;
     left: 43px !important;
+    @apply -md:flex -md:flex-col
 }
 
 .hero-swiper-pagination .swiper-pagination-bullet {
@@ -116,7 +117,7 @@
 }
 
 .about-tip__title {
-    @apply text-color-dark font-bold text-7xl mb-[14px] text-center
+    @apply text-color-dark font-bold text-7xl mb-[14px] text-center text-5xl
 }
 
 .about-tip__title span {
@@ -128,7 +129,7 @@
 }
 
 .about-tip__text {
-    @apply text-color-dark text-center max-w-[270px] mx-auto
+    @apply text-color-dark text-center max-w-[270px] mx-auto -sm:text-sm
 }
 
 .program-card {
@@ -140,11 +141,11 @@
 }
 
 .program-card__img img {
-    @apply w-full h-full object-cover object-center max-h-[200px]
+    @apply w-full h-full object-cover object-center max-h-[200px] -md:max-h-full
 }
 
 .program-card__body {
-    @apply px-8 pt-[18px] pb-8 bg-white
+    @apply px-8 pt-[18px] pb-8 bg-white -2xl:pl-6 -2xl:pr-6 -sm:pt-4 -sm:px-4 -sm:pb-6
 }
 
 .program-card__pretitle {
@@ -218,7 +219,7 @@ img.user-icon-info__img {
 }
 
 .program-card__price {
-    @apply text-[2rem] leading-[1.094em] tracking-tighter font-semibold flex items-end
+    @apply text-[2rem] leading-[1.094em] tracking-tighter font-semibold flex items-end -2xl:text-[1.5rem] -sm:flex-col -sm:items-start
 }
 
 .program-card__price strong {
@@ -230,7 +231,7 @@ img.user-icon-info__img {
 }
 
 .program-card__oldprice {
-    @apply font-semibold text-color-dark text-base ml-3 tracking-tighter 
+    @apply font-semibold text-color-dark text-base ml-3 tracking-tighter -sm:ml-0
 }
 
 strong.program-card__oldprice span:not(.currency) {
@@ -242,11 +243,11 @@ strong.program-card__oldprice span.currency {
 }
 
 .program-card__likes {
-    @apply text-base font-bold text-white absolute top-[23px] left-6 py-1 pl-3 pr-4 rounded-[10px] flex items-center  transition-all
+    @apply text-base font-bold text-white absolute top-[23px] left-6 py-1 pl-3 pr-4 rounded-[10px] flex items-center  transition-all -sm:text-xs -sm:leading-[1.5em] -sm:rounded-[5px]
 }
 
 .program-card__likes img {
-    @apply w-[20px] h-auto mr-2
+    @apply w-[20px] h-auto mr-2 -sm:w-4 -sm:h-auto -sm:mr-[6px]
 }
 
 .program-card__likes .extra {
@@ -270,11 +271,11 @@ strong.program-card__oldprice span.currency {
 }
 
 .way-tabs-list {
-    @apply flex items-center justify-center border-b-2 w-max mx-auto mb-[105px];
+    @apply flex items-center justify-center border-b-2 w-max mx-auto mb-[105px] -md:justify-start -md:w-full -md:max-w-full -md:overflow-x-auto -md:mb-8
 }
 
 .way-tab {
-    @apply flex items-center justify-center min-w-[210px] relative py-4 cursor-pointer text-color-gray after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full  after:transition-all after:bg-transparent transition-all
+    @apply flex items-center justify-center min-w-[210px] relative py-4 cursor-pointer text-color-gray after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full  after:transition-all after:bg-transparent transition-all -lg:text-sm -lg:min-w-[175px]
 }
 
 .way-tab svg {
@@ -323,7 +324,7 @@ strong.program-card__oldprice span.currency {
 }
 
 .way-wrapper .container {
-    @apply max-w-[1062px] mx-auto flex items-center justify-between
+    @apply max-w-[1062px] mx-auto flex items-center justify-between -md:flex-col
 }
 
 .way-title {
@@ -336,11 +337,11 @@ strong.program-card__oldprice span.currency {
 
 .success-list-wrapper {
     width: calc(100% - 328px);
-    @apply pl-16 border-l-2 border-l-color-dark
+    @apply pl-16 border-l-2 border-l-color-dark -lg:w-full -lg:pl-0 -lg:border-none
 }
 
 .success-list {
-    @apply grid grid-cols-3 gap-x-16 gap-y-12
+    @apply grid grid-cols-3 gap-x-16 gap-y-12 -xl:grid-cols-2 -xl:gap-y-6 -xl:gap-x-8 -sm:grid-cols-1
 }
 
 .success-list__icon {
@@ -357,11 +358,11 @@ strong.program-card__oldprice span.currency {
 
 .review-wrapper {
     box-shadow: 0px 30px 50px rgba(15, 144, 209, 0.1);
-    @apply py-8 px-16 w-full max-w-[700px] mx-auto bg-white rounded-[70px] flex flex-col items-center
+    @apply py-8 px-16 w-full max-w-[700px] mx-auto bg-white rounded-[70px] flex flex-col items-center -sm:px-6 -sm:rounded-[20px]
 }
 
 .review__title {
-    @apply text-xl leading-6 text-color-dark font-bold mb-2
+    @apply text-xl leading-6 text-color-dark font-bold mb-2 -sm:text-base
 }
 
 .start-rating {
@@ -416,18 +417,19 @@ strong.program-card__oldprice span.currency {
 }
 
 .news-list {
-    @apply grid grid-cols-4 gap-8;
     grid-template-areas:
     "article-1 article-1 article-2 article-2"
-    "article-1 article-1 article-3 article-4"
+    "article-1 article-1 article-3 article-4";
+    @apply grid grid-cols-4 gap-8 -lg:grid-cols-1;
 }
 
 .news-item {
-    @apply relative z-1 overflow-hidden rounded-[20px] p-8 min-h-[314px]
+    @apply relative z-1 overflow-hidden rounded-[20px] p-8 min-h-[314px] -sm:p-6 -sm:min-h-[220px]
 }
 
 .news-item:first-child {
    grid-area: article-1;
+   @apply -sm:min-h-[480px]
    
 }
 .news-item:nth-child(2) {
@@ -457,11 +459,15 @@ strong.program-card__oldprice span.currency {
 }
 
 .news-item__label {
-    @apply py-2 px-[14px] rounded-[5px] text-xs text-white font-bold w-max mb-4
+    @apply py-2 px-[14px] rounded-[5px] text-xs text-white font-bold w-max mb-4 -sm:text-[10px] -sm:leading-[1.3em] -sm:py-[6px] -sm:px-[10px] -sm:mb-2
 }
 
 .news-item__title {
-    @apply text-white font-bold text-[2rem] leading-[1.094em]
+    @apply text-white font-bold text-[2rem] leading-[1.094em] -sm:text-base
+}
+
+.news-item:first-child .news-item__title {
+    @apply -sm:text-2xl
 }
 
 .news-item__content {
@@ -474,11 +480,11 @@ strong.program-card__oldprice span.currency {
 }
 
 .news-item:first-child {
-    @apply p-12
+    @apply p-12 -sm:p-6
 }
 
 .footer-logo {
-    @apply max-w-[224px] w-full
+    @apply max-w-[224px] w-full -sm:mb-6
 }
 
 .footer-logo img {
@@ -490,15 +496,15 @@ strong.program-card__oldprice span.currency {
 }
 
 .contact-tel {
-    @apply text-color-dark font-semibold text-[2rem] leading-[1em] mb-2
+    @apply text-color-dark font-semibold text-[2rem] leading-[1em] mb-2 -md:text-2xl
 }
 
 .contact-mail {
-    @apply font-semibold text-color-dark block w-max ml-auto
+    @apply font-semibold text-color-dark block w-max ml-auto -sm:mx-auto
 }
 
 .footer-nav__item:not(:last-child) {
-    @apply mr-8
+    @apply mr-8 -md:mr-4 -sm:mr-0 -sm:mb-2
 }
 
 .socials__item:not(:last-child) {
@@ -510,11 +516,11 @@ strong.program-card__oldprice span.currency {
 }
 
 .copy-divider {
-    @apply w-[1px] h-[18px] bg-[#434F6D] mx-4 
+    @apply w-[1px] h-[18px] bg-[#434F6D] mx-4 -sm:h-[1px] -sm:w-[18px] -sm:my-1
 }
 
 .copy {
-    @apply flex items-center text-xs leading-[1.5em] text-[#8A949F]
+    @apply flex items-center text-xs leading-[1.5em] text-[#8A949F] -lg:mb-4 -sm:flex-col -sm:items-center
 }
 
 .copy a {
@@ -522,21 +528,23 @@ strong.program-card__oldprice span.currency {
 }
 
 .policy-list {
-    @apply flex items-center mr-8
+    @apply flex items-center mr-8 -sm:flex-col -sm:items-center -sm:mr-0 -sm:mb-4
 }
 
 .policy-list__item:not(:last-child) {
-    @apply mr-4
+    @apply mr-4 -sm:mr-0 -sm:mb-1
 }
 
 .policy-list__link {
     @apply text-xs leading-[1.5em] text-color-dark
 }
 
-#map { height: 720px; }
+#map { 
+    @apply h-[720px] -md:h-[100vh]
+}
 
 .map-popup {
-    @apply absolute right-[16.2vw] py-12 pl-12 pr-6 bg-white rounded-[20px] z-[9999999999] w-11/12 max-w-[360px] transition-all top-32 opacity-0 invisible
+    @apply absolute right-[16.2vw] py-12 pl-12 pr-6 bg-white rounded-[20px] z-[9999999999] w-11/12 max-w-[360px] transition-all top-32 opacity-0 invisible -sm:right-auto -sm:left-1/2  -sm:-translate-x-1/2 
 }
 
 .map-popup.active {
@@ -582,7 +590,6 @@ strong.program-card__oldprice span.currency {
 
 .select {
 	position: relative;
-	margin: 30px 0;
 }
 
 .select--active {
@@ -595,7 +602,7 @@ strong.program-card__oldprice span.currency {
 
 .select__options {
     box-shadow: 0px 4px 24px rgba(91, 117, 203, 0.26);
-    @apply absolute top-[120%] left-1/2 -translate-x-1/2 flex flex-col invisible bg-white w-[220px] overflow-hidden rounded-xl py-2
+    @apply absolute top-[120%] left-1/2 -translate-x-1/2 flex flex-col invisible bg-white w-[220px] overflow-hidden rounded-xl py-2 -sm:left-auto -sm:right-0 -sm:translate-x-0 -sm:w-[200px]
 }
 
 .select--active .select__options {
@@ -603,7 +610,7 @@ strong.program-card__oldprice span.currency {
 }
 
 .select__toggle {
-    @apply flex items-center font-bold ml-auto py-1.5 px-3 rounded-3xl cursor-pointer uppercase transition-all
+    @apply flex items-center font-bold ml-auto py-1.5 px-3 rounded-3xl cursor-pointer uppercase transition-all -sm:text-[10px]
 }
 
 .select__toggle:hover {
@@ -611,11 +618,11 @@ strong.program-card__oldprice span.currency {
 }
 
 .select__toggle img {
-    @apply mr-1
+    @apply mr-1 -sm:w-4 -sm:h-auto
 }
 
 .select__option {
-    @apply flex items-center pl-8 pr-6 py-[10px] justify-between
+    @apply flex items-center pl-8 pr-6 py-[10px] justify-between -sm:text-xs -sm:py-2 -sm:pl-6 -sm:pr-4
 }
 
 .select__option:hover {
@@ -632,4 +639,59 @@ strong.program-card__oldprice span.currency {
 
 .select__option--active .option-check {
     @apply opacity-100
+}
+
+.m-menu-wrapper {
+    @apply fixed top-0 bottom-0 left-0 right-0 w-full h-full z-[99999999] bg-white bg-opacity-80 backdrop-blur-lg transition-all opacity-0 invisible
+}
+
+.m-menu-wrapper.active {
+    @apply opacity-100 visible
+}
+
+.m-menu-head {
+    @apply flex items-center justify-between py-8 mb-16
+}
+
+.m-menu__title {
+    @apply text-color-gray text-2xl
+}
+
+.m-nav {
+    @apply mb-16 flex flex-col items-center
+}
+
+.m-nav__item:not(:last-child) {
+    @apply mb-8
+}
+
+.m-nav__link {
+    @apply font-bold text-color-dark text-xl
+}
+
+.m-controls {
+    box-shadow: 0px 0px 25px rgba(15, 144, 209, 0.25);
+    @apply w-full max-w-[288px] p-6 bg-white flex flex-col items-center rounded-[20px] mx-auto text-center
+}
+
+@media (max-width: 1024px) {
+    .news-list {
+        grid-template-areas: none;
+    }
+
+    article.news-item {
+        grid-area: auto !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-swiper-pagination .swiper-pagination-bullet {
+        margin-bottom: 16px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-swiper-pagination {
+        left: 16px !important;
+    }
 }

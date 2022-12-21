@@ -8,7 +8,7 @@ const heroSlider = new Swiper(".js-hero-slider", {
   pagination: {
     el: ".hero-swiper-pagination",
     clickable: true,
-  },
+  }
 });
 
 const waySlider = new Swiper(".js-way-slider", {
@@ -26,6 +26,21 @@ heroNextBtn.addEventListener("click", function (e) {
 const eduSlider = new Swiper(".js-edu-slider", {
   slidesPerView: 3,
   spaceBetween: 30,
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+    480: {
+      slidesPerView: 1,
+    },
+
+    640: {
+      slidesPerView: 2,
+    },
+    1025: {
+      slidesPerView: 3
+    }
+  },
   pagination: {
     el: ".js-edu-slider-pagination",
     type: "progressbar",
@@ -55,3 +70,16 @@ wayBtns.forEach((tab, index) => {
   });
 });
 
+const mobileMenu = document.getElementById('mobile-menu');
+const humBtn = document.getElementById('humBtn');
+const closeMenuBtn = document.getElementById('closeMenu');
+
+humBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  mobileMenu.classList.add('active');
+});
+
+closeMenuBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  mobileMenu.classList.remove('active');
+});
