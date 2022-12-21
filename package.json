@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "serve": "parcel ./src/index.html -p 5500",
-    "build": "parcel build ./src/index.html"
+    "prebuild-dev": "shx rm -rf dist/*",
+    "build-dev": "parcel build ./src/index.html --no-optimize --public-url ./",
+    "prebuild": "shx rm -rf dist/*",
+    "build": "parcel build ./src/index.html --public-url ./",
+    "push-gh-pages": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +17,7 @@
   "devDependencies": {
     "parcel": "2.8.1",
     "postcss": "8.4.20",
+    "shx": "0.3.4",
     "tailwindcss": "3.2.4"
   },
   "dependencies": {
