@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body::before {
+    content: '';
+    background: linear-gradient(180deg, #FFFFFF 0%, #F1F9FF 100%);
+    @apply absolute top-0 left-0 w-full h-[100vh] -z-1
+}
+
 .header {
     @apply py-6 w-full z-50 relative -sm:py-4;
 }
