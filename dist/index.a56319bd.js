@@ -593,11 +593,485 @@ const heroSlider = new (0, _swiperDefault.default)(".js-hero-slider", {
         }
     }
 });
-(0, _aosDefault.default).init();
+(0, _aosDefault.default).init({
+    disable: false,
+    startEvent: "DOMContentLoaded",
+    initClassName: "aos-init",
+    animatedClassName: "aos-animate",
+    useClassNames: false,
+    disableMutationObserver: false,
+    debounceDelay: 50,
+    throttleDelay: 99,
+    // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+    offset: 0,
+    delay: 0,
+    duration: 400,
+    easing: "ease",
+    once: true,
+    mirror: false,
+    anchorPlacement: "bottom-bottom"
+});
 const waySlider = new (0, _swiperDefault.default)(".js-way-slider", {
     duration: 500,
     slidesPerView: 1,
-    allowTouchMove: false
+    initialSlide: 0,
+    allowTouchMove: false,
+    on: {
+        init: function(e) {},
+        slideChangeTransitionStart: function(e) {
+            if (e.activeIndex === 0) wslide1Anime();
+            if (e.activeIndex === 1) wslide2Anime();
+            if (e.activeIndex === 2) wslide3Anime();
+            if (e.activeIndex === 3) wslide4Anime();
+        }
+    }
+});
+function wslide1Anime() {
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-1-content-anime > *",
+        opacity: [
+            0,
+            1
+        ],
+        translateY: [
+            50,
+            0
+        ],
+        delay: (0, _animeEsDefault.default).stagger(100, {
+            start: 500
+        }),
+        duration: 800,
+        easing: "easeInOutQuad"
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-1-img-anime",
+        opacity: [
+            0,
+            1
+        ],
+        scale: [
+            {
+                value: 0.25,
+                easing: "easeInOutQuad",
+                duration: 0
+            },
+            {
+                value: 1,
+                easing: "easeInOutQuad",
+                duration: 1000
+            }
+        ],
+        duration: 1200,
+        easing: "easeInOutQuad"
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-1-white-anime",
+        opacity: [
+            0,
+            1
+        ],
+        rotate: [
+            "-45deg",
+            "15deg"
+        ],
+        translateX: [
+            "-50%",
+            "0"
+        ],
+        duration: 1500,
+        easing: "easeInOutQuad"
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-1-yellow-anime",
+        opacity: [
+            0,
+            1
+        ],
+        delay: 1000,
+        translateX: [
+            "100%",
+            "0"
+        ],
+        duration: 1500
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-1-red-anime",
+        opacity: [
+            0,
+            1
+        ],
+        delay: 800,
+        translateY: [
+            "100%",
+            0
+        ],
+        duration: 1500
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-1-orange-anime",
+        opacity: [
+            0,
+            1
+        ],
+        delay: 1200,
+        translateY: [
+            "-100%",
+            0
+        ],
+        duration: 1500
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-1-rcube-anime",
+        opacity: [
+            0,
+            1
+        ],
+        delay: 300,
+        translateX: [
+            "100%",
+            0
+        ],
+        duration: 1500
+    });
+}
+function wslide2Anime() {
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-2-content-anime > *",
+        opacity: [
+            0,
+            1
+        ],
+        translateY: [
+            50,
+            0
+        ],
+        delay: (0, _animeEsDefault.default).stagger(100, {
+            start: 500
+        }),
+        duration: 800,
+        easing: "easeInOutQuad"
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-2-img-anime",
+        opacity: [
+            0,
+            1
+        ],
+        translateY: [
+            "50%",
+            0
+        ],
+        duration: 800,
+        scale: [
+            {
+                value: 0.25,
+                easing: "easeInOutQuad",
+                duration: 0
+            },
+            {
+                value: 1,
+                easing: "easeInOutQuad",
+                duration: 1000
+            }
+        ],
+        easing: "easeInOutQuad"
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-2-red-anime",
+        opacity: [
+            0,
+            1
+        ],
+        delay: 600,
+        translateX: [
+            "100%",
+            "0"
+        ],
+        duration: 1500
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-2-white-anime",
+        opacity: [
+            0,
+            1
+        ],
+        delay: 800,
+        rotate: [
+            "15deg",
+            0
+        ],
+        translateX: [
+            "100%",
+            "0"
+        ],
+        duration: 1500
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-2-orange-anime",
+        opacity: [
+            0,
+            1
+        ],
+        delay: 1000,
+        translateX: [
+            "-100%",
+            "0"
+        ],
+        duration: 1500
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-2-blue-anime",
+        opacity: [
+            0,
+            1
+        ],
+        delay: 1000,
+        translateY: [
+            "100%",
+            "0"
+        ],
+        duration: 1500
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-2-bordered-anime",
+        opacity: [
+            0,
+            1
+        ],
+        delay: 1000,
+        rotate: [
+            "-35deg",
+            0
+        ],
+        translateY: [
+            "-100%",
+            "0"
+        ],
+        duration: 1800
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-2-bcube-anime ",
+        opacity: [
+            0,
+            1
+        ],
+        delay: 1000,
+        translateY: [
+            "-100%",
+            "0"
+        ],
+        duration: 1500
+    });
+}
+function wslide3Anime() {
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-3-content-anime > *",
+        opacity: [
+            0,
+            1
+        ],
+        translateY: [
+            50,
+            0
+        ],
+        delay: (0, _animeEsDefault.default).stagger(100, {
+            start: 500
+        }),
+        duration: 800,
+        easing: "easeInOutQuad"
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-3-img-anime",
+        opacity: [
+            0,
+            1
+        ],
+        duration: 800,
+        scale: [
+            {
+                value: 0.25,
+                easing: "easeInOutQuad",
+                duration: 0
+            },
+            {
+                value: 1,
+                easing: "easeInOutQuad",
+                duration: 1000
+            }
+        ],
+        easing: "easeInOutQuad"
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-3-bordered-anime img",
+        opacity: [
+            0,
+            1
+        ],
+        delay: 600,
+        translateX: [
+            "100%",
+            "0"
+        ],
+        rotate: [
+            "15deg",
+            0
+        ],
+        duration: 1500
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-3-red-anime",
+        opacity: [
+            0,
+            1
+        ],
+        delay: 800,
+        translateX: [
+            "-100%",
+            "0"
+        ],
+        duration: 1500
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-3-orange-anime",
+        opacity: [
+            0,
+            1
+        ],
+        delay: 1000,
+        translateY: [
+            "-100%",
+            "0"
+        ],
+        duration: 1500
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-3-ocube-anime",
+        opacity: [
+            0,
+            1
+        ],
+        delay: 1200,
+        translateY: [
+            "100%",
+            "0"
+        ],
+        duration: 1500
+    });
+}
+function wslide4Anime() {
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-4-content-anime > *",
+        opacity: [
+            0,
+            1
+        ],
+        translateY: [
+            50,
+            0
+        ],
+        delay: (0, _animeEsDefault.default).stagger(100, {
+            start: 500
+        }),
+        duration: 800,
+        easing: "easeInOutQuad"
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-4-img-anime",
+        opacity: [
+            0,
+            1
+        ],
+        duration: 800,
+        scale: [
+            {
+                value: 0.25,
+                easing: "easeInOutQuad",
+                duration: 0
+            },
+            {
+                value: 1,
+                easing: "easeInOutQuad",
+                duration: 1000
+            }
+        ],
+        easing: "easeInOutQuad"
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-4-white-anime",
+        opacity: [
+            0,
+            1
+        ],
+        duration: 1000,
+        delay: 500,
+        translateX: [
+            "100%",
+            0
+        ]
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-4-orange-anime",
+        opacity: [
+            0,
+            1
+        ],
+        duration: 1200,
+        delay: 500,
+        translateX: [
+            "-100%",
+            0
+        ]
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-4-yellow-anime",
+        opacity: [
+            0,
+            1
+        ],
+        duration: 1000,
+        delay: 700,
+        translateY: [
+            "100%",
+            0
+        ]
+    });
+    (0, _animeEsDefault.default)({
+        targets: ".wslide-4-green-anime",
+        opacity: [
+            0,
+            1
+        ],
+        duration: 1000,
+        delay: 1000,
+        translateY: [
+            "-100%",
+            0
+        ]
+    });
+}
+(0, _animeEsDefault.default)({
+    targets: ".wslide-1-rcube-anime img",
+    duration: 1500,
+    translateY: 15,
+    direction: "alternate",
+    loop: true,
+    easing: "easeInOutQuad"
+});
+(0, _animeEsDefault.default)({
+    targets: ".wslide-2-bcube-anime img",
+    duration: 1500,
+    translateY: 15,
+    direction: "alternate",
+    loop: true,
+    easing: "easeInOutQuad"
+});
+(0, _animeEsDefault.default)({
+    targets: ".wslide-3-ocube-anime img",
+    duration: 1500,
+    translateY: 15,
+    direction: "alternate",
+    loop: true,
+    easing: "easeInOutQuad"
 });
 const heroNextBtn = document.getElementById("hero-next");
 heroNextBtn.addEventListener("click", function(e) {
@@ -1218,6 +1692,30 @@ function heroSlide4Anime() {
     targets: ".about-ycube-anime img",
     duration: 2000,
     translateY: 12,
+    direction: "alternate",
+    loop: true,
+    easing: "easeInOutQuad"
+});
+(0, _animeEsDefault.default)({
+    targets: ".way-bcube-anime img",
+    duration: 2000,
+    translateY: 12,
+    direction: "alternate",
+    loop: true,
+    easing: "easeInOutQuad"
+});
+(0, _animeEsDefault.default)({
+    targets: ".way-gcube-anime img",
+    duration: 2500,
+    translateY: 12,
+    direction: "alternate",
+    loop: true,
+    easing: "easeInOutQuad"
+});
+(0, _animeEsDefault.default)({
+    targets: ".way-ocube-anime img",
+    duration: 1500,
+    translateY: -15,
     direction: "alternate",
     loop: true,
     easing: "easeInOutQuad"

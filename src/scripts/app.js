@@ -47,12 +47,333 @@ const heroSlider = new Swiper(".js-hero-slider", {
   },
 });
 
-AOS.init();
+AOS.init({
+   disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+   startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+   initClassName: 'aos-init', // class applied after initialization
+   animatedClassName: 'aos-animate', // class applied on animation
+   useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+   disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+   debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+   throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+   
+ 
+   // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+   offset: 0, // offset (in px) from the original trigger point
+   delay: 0, // values from 0 to 3000, with step 50ms
+   duration: 400, // values from 0 to 3000, with step 50ms
+   easing: 'ease', // default easing for AOS animations
+   once: true, // whether animation should happen only once - while scrolling down
+   mirror: false, // whether elements should animate out while scrolling past them
+   anchorPlacement: 'bottom-bottom', // defines which position of the element regarding to window should trigger the animation
+ 
+});
 
 const waySlider = new Swiper(".js-way-slider", {
   duration: 500,
   slidesPerView: 1,
+  initialSlide: 0,
   allowTouchMove: false,
+  on: {
+    init: function (e) {
+      
+      
+
+    },
+    slideChangeTransitionStart: function(e) {
+      if (e.activeIndex === 0) {
+        wslide1Anime();
+      }
+
+      if (e.activeIndex === 1) {
+        wslide2Anime();
+      }
+
+      if (e.activeIndex === 2) {
+        wslide3Anime();
+      }
+
+      if (e.activeIndex === 3) {
+        wslide4Anime();
+      }
+    },
+  }
+});
+
+function wslide1Anime() {
+  anime({
+    targets: '.wslide-1-content-anime > *',
+    opacity: [0, 1],
+    translateY: [50, 0],
+    delay: anime.stagger(100, {start: 500}),
+    duration: 800,
+    easing: "easeInOutQuad",
+  });
+
+  anime({
+    targets: '.wslide-1-img-anime',
+    opacity: [0, 1],
+    scale: [
+      { value: 0.25, easing: "easeInOutQuad", duration: 0 },
+      { value: 1, easing: "easeInOutQuad", duration: 1000 },
+    ],
+    duration: 1200,
+    easing: "easeInOutQuad",
+  })
+
+  anime({
+    targets: '.wslide-1-white-anime',
+    opacity: [0, 1],
+    rotate: ['-45deg', '15deg'],
+    translateX: ['-50%', '0'],
+    duration: 1500,
+    easing: "easeInOutQuad",
+  });
+  
+  anime({
+    targets: '.wslide-1-yellow-anime',
+    opacity: [0, 1],
+    delay: 1000,
+    translateX: ['100%', '0'],
+    duration: 1500,
+  })
+  
+  anime({
+    targets: '.wslide-1-red-anime',
+    opacity: [0, 1],
+    delay: 800,
+    translateY: ['100%', 0],
+    duration: 1500,
+  })
+   
+  anime({
+    targets: '.wslide-1-orange-anime',
+    opacity: [0, 1],
+    delay: 1200,
+    translateY: ['-100%', 0],
+    duration: 1500,
+  })
+
+  anime({
+    targets: '.wslide-1-rcube-anime',
+    opacity: [0, 1],
+    delay: 300,
+    translateX: ['100%', 0],
+    duration: 1500,
+  })
+
+}
+
+function wslide2Anime() {
+  anime({
+    targets: '.wslide-2-content-anime > *',
+    opacity: [0, 1],
+    translateY: [50, 0],
+    delay: anime.stagger(100, {start: 500}),
+    duration: 800,
+    easing: "easeInOutQuad",
+  });
+
+  anime({
+    targets: '.wslide-2-img-anime',
+    opacity: [0, 1],
+    translateY: ['50%', 0],
+    duration: 800,
+    scale: [
+      { value: 0.25, easing: "easeInOutQuad", duration: 0 },
+      { value: 1, easing: "easeInOutQuad", duration: 1000 },
+    ],
+    easing: "easeInOutQuad",
+  });
+
+  anime({
+    targets: '.wslide-2-red-anime',
+    opacity: [0, 1],
+    delay: 600,
+    translateX: ['100%', '0'],
+    duration: 1500,
+  });
+
+  anime({
+    targets: '.wslide-2-white-anime',
+    opacity: [0, 1],
+    delay: 800,
+    rotate: ['15deg', 0],
+    translateX: ['100%', '0'],
+    duration: 1500,
+  })
+
+
+  anime({
+    targets: '.wslide-2-orange-anime',
+    opacity: [0, 1],
+    delay: 1000,
+    translateX: ['-100%', '0'],
+    duration: 1500,
+  });
+
+  anime({
+    targets: '.wslide-2-blue-anime',
+    opacity: [0, 1],
+    delay: 1000,
+    translateY: ['100%', '0'],
+    duration: 1500,
+  });
+
+  anime({
+    targets: '.wslide-2-bordered-anime',
+    opacity: [0, 1],
+    delay: 1000,
+    rotate: ['-35deg', 0],
+    translateY: ['-100%', '0'],
+    duration: 1800,
+  })
+
+  anime({
+    targets: ".wslide-2-bcube-anime ",
+    opacity: [0, 1],
+    delay: 1000,
+    translateY: ['-100%', '0'],
+    duration: 1500,
+  });
+
+}
+
+function wslide3Anime() {
+  anime({
+    targets: '.wslide-3-content-anime > *',
+    opacity: [0, 1],
+    translateY: [50, 0],
+    delay: anime.stagger(100, {start: 500}),
+    duration: 800,
+    easing: "easeInOutQuad",
+  });
+
+  anime({
+    targets: '.wslide-3-img-anime',
+    opacity: [0, 1],
+    duration: 800,
+    scale: [
+      { value: 0.25, easing: "easeInOutQuad", duration: 0 },
+      { value: 1, easing: "easeInOutQuad", duration: 1000 },
+    ],
+    easing: "easeInOutQuad",
+  });
+
+  anime({
+    targets: '.wslide-3-bordered-anime img',
+    opacity: [0, 1],
+    delay: 600,
+    translateX: ['100%', '0'],
+    rotate: ['15deg', 0],
+    duration: 1500,
+  });
+
+  anime({
+    targets: '.wslide-3-red-anime',
+    opacity: [0, 1],
+    delay: 800,
+    translateX: ['-100%', '0'],
+    duration: 1500,
+  });
+
+  anime({
+    targets: '.wslide-3-orange-anime',
+    opacity: [0, 1],
+    delay: 1000,
+    translateY: ['-100%', '0'],
+    duration: 1500,
+  });
+
+  anime({
+    targets: '.wslide-3-ocube-anime',
+    opacity: [0, 1],
+    delay: 1200,
+    translateY: ['100%', '0'],
+    duration: 1500,
+  });
+}
+
+function wslide4Anime() {
+  anime({
+    targets: '.wslide-4-content-anime > *',
+    opacity: [0, 1],
+    translateY: [50, 0],
+    delay: anime.stagger(100, {start: 500}),
+    duration: 800,
+    easing: "easeInOutQuad",
+  });
+
+  anime({
+    targets: '.wslide-4-img-anime',
+    opacity: [0, 1],
+    duration: 800,
+    scale: [
+      { value: 0.25, easing: "easeInOutQuad", duration: 0 },
+      { value: 1, easing: "easeInOutQuad", duration: 1000 },
+    ],
+    easing: "easeInOutQuad",
+  });
+
+  anime({
+    targets: '.wslide-4-white-anime',
+    opacity: [0, 1],
+    duration: 1000,
+    delay: 500,
+    translateX: ['100%', 0],
+  });
+
+  anime({
+    targets: '.wslide-4-orange-anime',
+    opacity: [0, 1],
+    duration: 1200,
+    delay: 500,
+    translateX: ['-100%', 0],
+  });
+
+  anime({
+    targets: '.wslide-4-yellow-anime',
+    opacity: [0, 1],
+    duration: 1000,
+    delay: 700,
+    translateY: ['100%', 0],
+  });
+
+  anime({
+    targets: '.wslide-4-green-anime',
+    opacity: [0, 1],
+    duration: 1000,
+    delay: 1000,
+    translateY: ['-100%', 0],
+  });
+
+}
+
+anime({
+  targets: ".wslide-1-rcube-anime img",
+  duration: 1500,
+  translateY: 15,
+  direction: 'alternate',
+  loop: true,
+  easing: "easeInOutQuad",
+});
+
+anime({
+  targets: ".wslide-2-bcube-anime img",
+  duration: 1500,
+  translateY: 15,
+  direction: 'alternate',
+  loop: true,
+  easing: "easeInOutQuad",
+});
+
+anime({
+  targets: '.wslide-3-ocube-anime img',
+  duration: 1500,
+  translateY: 15,
+  direction: 'alternate',
+  loop: true,
+  easing: "easeInOutQuad",
 });
 
 const heroNextBtn = document.getElementById("hero-next");
@@ -500,6 +821,33 @@ anime({
   targets: ".about-ycube-anime img",
   duration: 2000,
   translateY: 12,
+  direction: 'alternate',
+  loop: true,
+  easing: "easeInOutQuad",
+});
+
+anime({
+  targets: ".way-bcube-anime img",
+  duration: 2000,
+  translateY: 12,
+  direction: 'alternate',
+  loop: true,
+  easing: "easeInOutQuad",
+});
+
+anime({
+  targets: ".way-gcube-anime img",
+  duration: 2500,
+  translateY: 12,
+  direction: 'alternate',
+  loop: true,
+  easing: "easeInOutQuad",
+});
+
+anime({
+  targets: ".way-ocube-anime img",
+  duration: 1500,
+  translateY: -15,
   direction: 'alternate',
   loop: true,
   easing: "easeInOutQuad",
