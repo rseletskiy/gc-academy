@@ -131,8 +131,8 @@
             <img src="./assets/hero-blue-gradient-cube.png" draggable="false"
                 class="absolute -z-1 top-[20px] -left-[124px] hero-blurcube-anime" alt="Cube" width="290" height="195">
             <div class="hero-ocube-anime absolute -z-1 top-[72px] left-[21px] -sm:top-2 -sm:left-3 -sm:z-[99999]">
-                <img src="./assets/hero-orange-cube.svg" draggable="false"
-                    class="-sm:w-[52px] -sm:h-auto "
+                <img src="./assets/hero-orange-cube.png" draggable="false"
+                    class="w-[92px] -sm:w-[52px] -sm:h-auto "
                     alt="Cube">
             </div>
             <img src="./assets/cubes-pattern.svg" class="absolute -z-1 right-[95px] -top-[112px] hero-pattern-anime" draggable="false"
@@ -141,7 +141,7 @@
             <div
                 class="absolute w-[580px] top-[79px] right-[26.4375vw] -xl:right-[10vw] -lg:w-[250px] -lg:bottom-0 -lg:top-auto -lg:right-auto -lg:left-[15vw] -sm:w-auto -sm:bottom-[117px]">
                 <div class="cube bg-white rounded-[50px] -lg:rounded-2xl -sm:w-[160px] hero-slogancube-anime"></div>
-                <img src="./assets/slogan.svg" class="absolute bottom-6 -left-[39px] hero-slogan-anime" draggable="false" alt="Slogan">
+                <img src="./assets/slogan.svg" class="absolute bottom-6 -left-[39px] 3xl:-left-[78px] hero-slogan-anime" draggable="false" alt="Slogan">
             </div>
             <div class="absolute w-60 right-12 bottom-[200px] -sm:w-[107px] -sm:bottom-[250px] -sm:right-0">
                 <div class="cube bg-white rounded-4xl -sm:rounded-2xl"></div>
@@ -249,8 +249,8 @@
                                     <div class="cube bg-yellow-gradient rounded-2xl -sm:rounded-xl"></div>
                                 </div>
                                 <div class="absolute -top-[55px] -right-[11px] -sm:z-[999] -sm:-top-[33px] -sm:-right-[37px] slide-2-bcube-anime">
-                                    <img src="./assets/slide-2-blue-cube.svg" draggable="false"
-                                        class="-sm:w-[60px] "
+                                    <img src="./assets/slide-2-blue-cube.png" draggable="false"
+                                        class="w-[101px] -sm:w-[60px] "
                                         alt="Cube">
                                 </div>
                                 <div
@@ -283,9 +283,11 @@
                                 </div>
                                 <div
                                     class="relative w-full bg-black before:block before:pb-[53.046875%] rounded-4xl overflow-hidden shadow-2xl -lg:before:pb-[130%] -md:mt-[25px] -sm:before:pb-[158.125%] -sm:mt-[33px] slide-3-anime">
-                                    <img src="./assets/slide-3-img.jpg"
-                                        class="w-full h-full absolute top-0 left-0 object-cover object-center after:block after-"
-                                        draggable="false" alt="Image">
+
+                                    <video id="video" muted loop="true" class="w-full h-full absolute top-0 left-0 object-cover object-center pointer-events-none after:block after-">
+                                        <source src="./assets/slider-video.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="w-full h-full absolute top-0 left-0 video-shadow "></div>
                                     <div
                                         class="w-[82.96875%] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -sm:text-center -sm:w-[78.125%]">
                                         <h5 class="title-1 white mb-8 max-w-[624px] -sm:mb-4">
@@ -305,11 +307,9 @@
                                     </div>
                                 </div>
                                 <div class="absolute -bottom-16 -right-4 -sm:right-0 -sm:-bottom-12 slide-3-rcube-anime">
-                                    <img src="./assets/slide-3-red-cube.svg" draggable="false"
-                                    class="-sm:w-24" alt="Cube">
+                                    <img src="./assets/slide-3-red-cube.png" draggable="false"
+                                    class="w-[155px] -sm:w-24" alt="Cube">
                                 </div>
-                                <!-- <img src="./assets/slide-3-red-cube.svg" draggable="false"
-                                    class="absolute -bottom-16 -right-4 -sm:w-24 -sm:right-0 -sm:-bottom-12 slide-3-rcube-anime" alt="Cube"> -->
                             </div>
                         </div>
                     </div>
@@ -361,8 +361,8 @@
                                 </div>
 
                                 <div class="absolute -top-[55px] left-24 -sm:-top-10 slide-4-ycube-anime">
-                                    <img src="./assets/slide-4-yellow-cube.svg" draggable="false"
-                                    class="-sm:w-[70px]" alt="Cube">
+                                    <img src="./assets/slide-4-yellow-cube.png" draggable="false"
+                                    class="w-[126px] -sm:w-[70px]" alt="Cube">
                                 </div>
                                 <!-- <img src="./assets/slide-4-yellow-cube.svg" draggable="false"
                                     class="absolute -top-[55px] left-24 -sm:w-[70px] -sm:-top-10 slide-4-ycube-anime" alt="Cube"> -->
@@ -378,7 +378,9 @@
                 <div class="hero-swiper-pagination swiper-pagination"></div>
             </div>
             <button type="button" class="absolute bottom-[126px] left-[160px] z-50 -md:hidden" id="hero-next">
-                <img src="./assets/arr-next-long.svg" draggable="false" alt="Arrow next">
+                <svg width="49" height="15" viewBox="0 0 49 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M48.7071 8.2021C49.0976 7.81158 49.0976 7.17841 48.7071 6.78789L42.3431 0.423927C41.9526 0.0334029 41.3195 0.0334029 40.9289 0.423927C40.5384 0.814452 40.5384 1.44762 40.9289 1.83814L46.5858 7.495L40.9289 13.1518C40.5384 13.5424 40.5384 14.1755 40.9289 14.5661C41.3195 14.9566 41.9526 14.9566 42.3431 14.5661L48.7071 8.2021ZM48 6.495H0V8.495H48V6.495Z" fill="#B9C8D3"/>
+                </svg>
             </button>
 
         </section>
@@ -387,7 +389,7 @@
             <img src="./assets/about-cube-pattern.svg" data-aos="fade" data-aos-duration="500" data-aos-delay="800" draggable="false" class="absolute -bottom-[68px] -z-1 right-0"
                 alt="Cube pattern">
             <div class="container">
-                <img src="./assets/about-cubes-bg.png" data-aos="fade" data-aos-duration="500" data-aos-delay="800" class="absolute top-[29px] left-16  w-[45.9531%]"
+                <img src="./assets/about-cubes-bg.png" data-aos="fade" data-aos-duration="500" data-aos-delay="800" class="absolute top-[29px] left-16 max-w-[735px]  w-[45.9531%]"
                     draggable="false" alt="Cubes bg">
                 <div class="flex justify-between mb-[122px] relative -md:flex-col-reverse -sm:mb-[88px]">
                     <div class="w-[46.25%] relative z-0 -xl:flex -xl:items-center -md:w-[70%] -md:mx-auto -sm:w-[90%]">
@@ -427,10 +429,10 @@
                     </div>
 
                     <div class="absolute -bottom-[76px] right-2 about-gcube-anime" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="800">
-                        <img src="./assets/about-green-cube.svg" draggable="false" alt="Cube">
+                        <img src="./assets/about-green-cube.png" class="w-[94px]" draggable="false" alt="Cube">
                     </div>
                     <div class="absolute -bottom-[18px] -right-20 about-ycube-anime" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="1000">
-                        <img src="./assets/about-yellow-cube.svg" draggable="false" alt="Cube">
+                        <img src="./assets/about-yellow-cube.png" class="w-[92px]" draggable="false" alt="Cube">
                     </div>
                 </div>
 
@@ -1384,16 +1386,16 @@
             <div class="container">
                 <div class="flex justify-between -lg:flex-col -lg:relative">
                     <div class="w-full max-w-[328px] pr-12 flex flex-col z-0 justify-between -lg:max-w-full">
-                        <h4 class="title-2 uppercase -lg:mb-11">У GCA <br class="-lg:hidden" />есть все для вашего
+                        <h4 class="title-2 uppercase -lg:mb-11" data-aos="fade-up" data-aos-duration="500" data-aos-delay="350">У GCA <br class="-lg:hidden" />есть все для вашего
                             успеха</h4>
 
                         <img src="./assets/success-cubes.png"
                             class="w-full h-auto -z-1 -lg:max-w-[296px] -lg:absolute -lg:-top-9 -lg:left-0"
-                            draggable="false" alt="Cubes">
+                            draggable="false" alt="Cubes" data-aos="fade-in" data-aos-duration="500" data-aos-delay="350">
                     </div>
                     <div class="success-list-wrapper">
                         <ul class="success-list">
-                            <li class="success-list__item">
+                            <li class="success-list__item" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
                                 <div class="success-list__icon">
                                     <div class="absolute w-12 -left-[2px] top-[9px]">
                                         <div class="cube bg-color-red bg-opacity-10 rounded-lg -z-1"></div>
@@ -1410,7 +1412,7 @@
                                     охватить все грани развития.
                                 </p>
                             </li>
-                            <li class="success-list__item">
+                            <li class="success-list__item" data-aos="fade-up" data-aos-duration="500" data-aos-delay="400">
                                 <div class="success-list__icon">
                                     <div class="absolute w-12 -left-[2px] top-[9px]">
                                         <div class="cube bg-color-green bg-opacity-10 rounded-lg -z-1"></div>
@@ -1426,7 +1428,7 @@
                                     бизнеса.
                                 </p>
                             </li>
-                            <li class="success-list__item">
+                            <li class="success-list__item" data-aos="fade-up" data-aos-duration="500" data-aos-delay="600">
                                 <div class="success-list__icon">
                                     <div class="absolute w-12 -left-[2px] top-[9px]">
                                         <div class="cube bg-color-orange bg-opacity-10 rounded-lg -z-1"></div>
@@ -1441,7 +1443,7 @@
                                     разобрался и освоил тему. Без сложных терминов и заумных фраз.
                                 </p>
                             </li>
-                            <li class="success-list__item">
+                            <li class="success-list__item" data-aos="fade-up" data-aos-duration="500" data-aos-delay="400">
                                 <div class="success-list__icon">
                                     <div class="absolute w-12 -left-[2px] top-[9px]">
                                         <div class="cube bg-color-blue bg-opacity-10 rounded-lg -z-1"></div>
@@ -1457,7 +1459,7 @@
                                     Общайтесь, обменивайтесь знаниями и перенимайте опыт у других учеников академии.
                                 </p>
                             </li>
-                            <li class="success-list__item">
+                            <li class="success-list__item" data-aos="fade-up" data-aos-duration="500" data-aos-delay="600">
                                 <div class="success-list__icon">
                                     <div class="absolute w-12 -left-[2px] top-[9px]">
                                         <div class="cube bg-color-yellow bg-opacity-10 rounded-lg -z-1"></div>
@@ -1472,7 +1474,7 @@
                                     круглосуточному доступу к современной и удобной площадке.
                                 </p>
                             </li>
-                            <li class="success-list__item">
+                            <li class="success-list__item" data-aos="fade-up" data-aos-duration="500" data-aos-delay="800">
                                 <div class="success-list__icon">
                                     <div class="absolute w-12 -left-[2px] top-[9px]">
                                         <div class="cube bg-color-dark bg-opacity-10 rounded-lg -z-1"></div>
@@ -1495,18 +1497,20 @@
         </section>
 
         <section class="pt-32 pb-16 relative -sm:pt-16 -sm:pb-12">
-            <img src="./assets/reviews-cube-pattern.png" class="absolute -top-[167px] left-0 w-full max-w-[957px] -z-1"
+            <img src="./assets/reviews-cube-pattern.png" data-aos="fade-in" data-aos-duration="500" data-aos-delay="200" class="absolute -top-[167px] left-0 w-full max-w-[957px] -z-1"
                 draggable="false" alt="Cubes">
 
-            <img src="./assets/reviews-yellow-cube.svg" class="absolute top-0 right-[18.5625vw]" draggable="false"
-                alt="Cube">
-            <img src="./assets/reviews-orange-cube.svg" class="absolute -top-[29px] right-[22.9375vw]" draggable="false"
-                alt="Cube">
+            <div class="absolute top-0 right-[18.5625vw] review-ycube-anime">
+                <img src="./assets/reviews-yellow-cube.svg" draggable="false" alt="Cube">
+            </div>
+            <div class="absolute -top-[29px] right-[22.9375vw] review-ocube-anime">
+                <img src="./assets/reviews-orange-cube.svg" draggable="false" alt="Cube">
+            </div>
 
             <div class="container relative">
-                <h3 class="title-2 uppercase text-center mb-16 -sm:mb-6">Что говорят наши ученики</h3>
+                <h3 class="title-2 uppercase text-center mb-16 -sm:mb-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">Что говорят наши ученики</h3>
 
-                <div class="relative">
+                <div class="relative"  data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
                     <div class="review-wrapper">
                         <h6 class="review__title">
                             Это невероятный опыт!
@@ -1572,36 +1576,36 @@
                 </div>
 
 
-                <div role="button" class="absolute top-[162px] right-24 -2xl:right-16 -xl:right-6 -lg:hidden">
+                <div role="button" class="absolute top-[162px] right-24 -2xl:right-16 -xl:right-6 -lg:hidden" data-aos="fade-left" data-aos-duration="500" data-aos-delay="200">
                     <div class="review-user-btn__icon w-16 border-color-blue rounded-[15px]">
                         <img src="./assets/review-avatar-1.jpg" draggable="false" alt="User">
                     </div>
                 </div>
-                <div role="button" class="absolute bottom-[141px] right-0 -2xl:-right-6 -xl:-right-8 -lg:hidden">
+                <div role="button" class="absolute bottom-[141px] right-0 -2xl:-right-6 -xl:-right-8 -lg:hidden" data-aos="fade-left" data-aos-duration="500" data-aos-delay="400">
                     <div class="review-user-btn__icon w-20 border-color-green rounded-[20px]">
                         <img src="./assets/review-avatar-2.jpg" draggable="false" alt="User">
                     </div>
                 </div>
                 <div role="button"
-                    class="absolute bottom-[61px] right-[146px] -2xl:right-[90px] -xl:right-[40px] -lg:hidden">
+                    class="absolute bottom-[61px] right-[146px] -2xl:right-[90px] -xl:right-[40px] -lg:hidden"  data-aos="fade-left" data-aos-duration="500" data-aos-delay="600">
                     <div class="review-user-btn__icon w-12 border-color-red rounded-[10px]">
                         <img src="./assets/review-avatar-3.jpg" draggable="false" alt="User">
                     </div>
                 </div>
                 <div role="button"
-                    class="absolute bottom-[61px] left-[146px] -2xl:left-[90px] -xl:left-[40px] -lg:hidden">
+                    class="absolute bottom-[61px] left-[146px] -2xl:left-[90px] -xl:left-[40px] -lg:hidden" data-aos="fade-right" data-aos-duration="500" data-aos-delay="200">
                     <div class="review-user-btn__icon w-12 border-color-orange rounded-[10px]">
                         <img src="./assets/review-avatar-4.jpg" draggable="false" alt="User">
                     </div>
                 </div>
 
-                <div role="button" class="absolute bottom-[141px] left-0 -2xl:-left-6 -xl:-left-8 -lg:hidden">
+                <div role="button" class="absolute bottom-[141px] left-0 -2xl:-left-6 -xl:-left-8 -lg:hidden" data-aos="fade-right" data-aos-duration="500" data-aos-delay="400">
                     <div class="review-user-btn__icon w-20 border-color-red rounded-[20px]">
                         <img src="./assets/review-avatar-5.jpg" draggable="false" alt="User">
                     </div>
                 </div>
 
-                <div role="button" class="absolute top-[162px] left-24 -2xl:left-16 -xl:left-6 -lg:hidden">
+                <div role="button" class="absolute top-[162px] left-24 -2xl:left-16 -xl:left-6 -lg:hidden" data-aos="fade-right" data-aos-duration="500" data-aos-delay="600">
                     <div class="review-user-btn__icon w-16 border-color-green rounded-[15px]">
                         <img src="./assets/review-avatar-6.jpg" draggable="false" alt="User">
                     </div>
@@ -1610,9 +1614,11 @@
         </section>
 
         <section class="pt-16 pb-24 relative -sm:pt-12 -sm:pb-16">
-            <img src="./assets/news-blue-cube.svg" class="absolute top-[37%] left-[10px]" draggable="false" alt="Cube">
+            <div class="absolute top-[37%] left-[10px] blog-bcube-anime">
+                <img src="./assets/news-blue-cube.svg" draggable="false" alt="Cube">
+            </div>
 
-            <img src="./assets/news-blur-cube.svg" class="absolute top-[15%] -left-[123px]" draggable="false"
+            <img src="./assets/news-blur-cube.svg" class="absolute top-[15%] -left-[123px]" data-aos="fade-right" data-aos-duration="500" data-aos-delay="600" draggable="false"
                 alt="Cube">
 
             <img src="./assets/news-cubes-pattern.svg" class="absolute -bottom-[73px] right-0" draggable="false"
@@ -1620,14 +1626,14 @@
 
             <div class="container">
                 <div class="flex items-center justify-between mb-8">
-                    <h4 class="title-2 uppercase">
+                    <h4 class="title-2 uppercase" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
                         Новости академии
                     </h4>
-                    <a href="#" class="btn-border-sm">Все новости</a>
+                    <a href="#" class="btn-border-sm" data-aos="fade-up" data-aos-duration="500" data-aos-delay="400">Все новости</a>
                 </div>
 
                 <div class="news-list">
-                    <article class="news-item">
+                    <article class="news-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
                         <a href="#">
                             <div class="news-item__img">
                                 <img src="./assets/news-img-1.jpg" alt="news">
@@ -1643,7 +1649,7 @@
                             </div>
                         </a>
                     </article>
-                    <article class="news-item">
+                    <article class="news-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="500">
                         <a href="#">
                             <div class="news-item__img">
                                 <img src="./assets/news-img-2.jpg" alt="news">
@@ -1658,7 +1664,7 @@
                             </div>
                         </a>
                     </article>
-                    <article class="news-item">
+                    <article class="news-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="700">
                         <a href="#">
                             <div class="news-item__img">
                                 <img src="./assets/news-img-3.jpg" alt="news">
@@ -1673,7 +1679,7 @@
                             </div>
                         </a>
                     </article>
-                    <article class="news-item">
+                    <article class="news-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="900">
                         <a href="#">
                             <div class="news-item__img">
                                 <img src="./assets/news-img-4.jpg" alt="news">

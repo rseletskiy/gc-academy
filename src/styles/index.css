@@ -118,12 +118,20 @@ body::before {
     background: #FF4A35;
 }
 
+#hero-next svg path {
+    @apply transition-all
+}
+
+#hero-next:hover svg path {
+    fill: #FF4A35;
+}
+
 .text-group > p {
     margin-bottom: 16px
 }
 
 .about-tip__title {
-    @apply text-color-dark font-bold text-7xl mb-[14px] text-center text-5xl
+    @apply text-color-dark font-bold text-7xl mb-[14px] text-center -md:text-5xl
 }
 
 .about-tip__title span {
@@ -257,7 +265,7 @@ strong.program-card__oldprice span.currency {
 }
 
 .program-card__likes .extra {
-    @apply text-xs font-normal ml-2 whitespace-nowrap  invisible absolute
+    @apply text-xs font-normal ml-2 whitespace-nowrap  invisible absolute w-max
 }
 
 .program-card__likes:hover .extra {
@@ -678,6 +686,10 @@ strong.program-card__oldprice span.currency {
 .m-controls {
     box-shadow: 0px 0px 25px rgba(15, 144, 209, 0.25);
     @apply w-full max-w-[288px] p-6 bg-white flex flex-col items-center rounded-[20px] mx-auto text-center
+}
+
+.video-shadow {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.34%);
 }
 
 @media (max-width: 1024px) {

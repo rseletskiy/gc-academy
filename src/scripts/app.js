@@ -5,6 +5,8 @@ import 'aos/dist/aos.css';
 
 Swiper.use([Navigation, Pagination, Autoplay, EffectFade]);
 
+const video = document.getElementById('video');
+
 const heroSlider = new Swiper(".js-hero-slider", {
   effect: "fade",
   duration: 500,
@@ -38,6 +40,12 @@ const heroSlider = new Swiper(".js-hero-slider", {
 
       if (e.activeIndex === 3) {
         heroSlide3Anime();
+        video.play();
+      } else {
+        setTimeout(() => {
+          video.pause();
+          video.currentTime = 0;
+        }, 1000)
       }
 
       if(e.activeIndex === 4) {
@@ -376,6 +384,33 @@ anime({
   easing: "easeInOutQuad",
 });
 
+anime({
+  targets: '.review-ocube-anime img',
+  duration: 1500,
+  translateY: 15,
+  direction: 'alternate',
+  loop: true,
+  easing: "easeInOutQuad",
+});
+
+anime({
+  targets: '.review-ycube-anime img',
+  duration: 2000,
+  translateY: -15,
+  direction: 'alternate',
+  loop: true,
+  easing: "easeInOutQuad",
+});
+
+anime({
+  targets: '.blog-bcube-anime img',
+  duration: 2000,
+  translateY: 15,
+  direction: 'alternate',
+  loop: true,
+  easing: "easeInOutQuad",
+});
+
 const heroNextBtn = document.getElementById("hero-next");
 heroNextBtn.addEventListener("click", function (e) {
   e.preventDefault();
@@ -385,6 +420,10 @@ heroNextBtn.addEventListener("click", function (e) {
 const eduSlider = new Swiper(".js-edu-slider", {
   slidesPerView: 3,
   spaceBetween: 30,
+  mousewheel: true,
+  keyboard: {
+    enabled: true,
+  },
   breakpoints: {
     320: {
       slidesPerView: 1,
