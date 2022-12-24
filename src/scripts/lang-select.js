@@ -167,5 +167,9 @@ const constructor = (select) => {
 	init();
 };
 
-const selects = document.querySelectorAll('[data-custom-select-class]');
-selects.forEach(constructor);
+
+setTimeout(() => {
+	const selects = document.querySelectorAll('[data-custom-select-class]');
+	selects.forEach(constructor);
+	console.log('ads');
+}, 10)
