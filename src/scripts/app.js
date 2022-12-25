@@ -80,14 +80,8 @@ AOS.init({
 const waySlider = new Swiper(".js-way-slider", {
   duration: 500,
   slidesPerView: 1,
-  initialSlide: 0,
   allowTouchMove: false,
   on: {
-    init: function (e) {
-      
-      
-
-    },
     slideChangeTransitionStart: function(e) {
       if (e.activeIndex === 0) {
         wslide1Anime();
@@ -355,6 +349,14 @@ function wslide4Anime() {
     translateY: ['-100%', 0],
   });
 
+  anime({
+    targets: '.wslide-4-gcube-anime',
+    opacity: [0, 1],
+    delay: 1200,
+    translateY: ['100%', '0'],
+    duration: 1500,
+  });
+
 }
 
 anime({
@@ -411,6 +413,15 @@ anime({
   easing: "easeInOutQuad",
 });
 
+anime({
+  targets: '.wslide-4-gcube-anime img',
+  duration: 2000,
+  translateY: 15,
+  direction: 'alternate',
+  loop: true,
+  easing: "easeInOutQuad",
+});
+
 const heroNextBtn = document.getElementById("hero-next");
 heroNextBtn.addEventListener("click", function (e) {
   e.preventDefault();
@@ -444,6 +455,42 @@ const eduSlider = new Swiper(".js-edu-slider", {
     type: "progressbar",
   },
 });
+
+const reviewSlider = new Swiper('.js-review-swiper', {
+  slidesPerView: 1,
+  effect: "fade",
+  duration: 500,
+  allowTouchMove: false,
+  spaceBetween: 80,
+  pagination: {
+    el: ".js-review-slider-pagination",
+  },
+  breakpoints: {
+    320: {
+      allowTouchMove: true,
+    },
+    1025: {
+      allowTouchMove: false,
+
+    },
+  },
+})
+
+const reviewBtns = document.querySelectorAll('.js-review-btn');
+
+reviewBtns.forEach((button, index) => {
+  button.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    for (let i = 0; i < reviewBtns.length; i++) {
+      reviewBtns[i].classList.remove("active");
+    }
+
+    const currentIndex = parseInt(this.getAttribute('data-index'));
+    reviewSlider.slideTo(currentIndex, 500)
+    this.classList.add("active");
+  })
+})
 
 function swiperNextSlide(slider) {
   slider.slideNext();

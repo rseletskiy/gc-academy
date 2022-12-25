@@ -97,7 +97,8 @@ body::before {
     @apply w-full before:pb-[100%] before:block
 }
 
-.js-hero-slider .swiper-slide:not(.swiper-slide-active){
+.js-hero-slider .swiper-slide:not(.swiper-slide-active), 
+.js-review-swiper .swiper-slide:not(.swiper-slide-active){
     opacity: 0 !important;
   }
 
@@ -108,14 +109,45 @@ body::before {
     @apply -md:flex -md:flex-col
 }
 
-.hero-swiper-pagination .swiper-pagination-bullet {
+.hero-swiper-pagination .swiper-pagination-bullet,
+.js-review-slider-pagination .swiper-pagination-bullet {
     width: 5px;
     height: 5px;
+}
+ 
+.js-review-slider-pagination .swiper-pagination-bullet:not(:last-child) {
     margin: 0 16px 0 0 !important;
 }
 
-.hero-swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.hero-swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active,
+.js-review-slider-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
     background: #FF4A35;
+}
+
+.js-review-slider-pagination {
+    bottom: -34px !important;
+    display: none;
+}
+
+.js-review-btn {
+    box-shadow: 0px 15px 25px rgba(15, 144, 209, 0);
+    @apply transition-all
+}
+
+.js-review-btn img {
+    transition: all 0.3s ease;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.js-review-btn:hover img, 
+.js-review-btn.active img {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+}
+
+.js-review-btn.active {
+    box-shadow: 0px 15px 25px rgba(15, 144, 209, 0.25);
 }
 
 #hero-next svg path {
@@ -301,11 +333,13 @@ strong.program-card__oldprice span.currency {
     @apply transition-all;
 }
 
-.way-tab.active {
+.way-tab.active,
+.way-tab:hover {
     @apply text-color-dark 
 }
 
-.way-tab:first-child.active svg path {
+.way-tab:first-child.active svg path,
+.way-tab:first-child:hover svg path {
     @apply fill-color-red
 }
 
@@ -313,7 +347,8 @@ strong.program-card__oldprice span.currency {
     @apply after:bg-color-red
 }
 
-.way-tab:nth-child(2).active svg path {
+.way-tab:nth-child(2).active svg path,
+.way-tab:nth-child(2):hover svg path {
     @apply fill-color-blue
 }
 
@@ -321,7 +356,8 @@ strong.program-card__oldprice span.currency {
     @apply after:bg-color-blue
 }
 
-.way-tab:nth-child(3).active svg path {
+.way-tab:nth-child(3).active svg path,
+.way-tab:nth-child(3):hover svg path {
     @apply fill-color-orange
 }
 
@@ -329,7 +365,8 @@ strong.program-card__oldprice span.currency {
     @apply after:bg-color-orange
 }
 
-.way-tab:nth-child(4).active svg path {
+.way-tab:nth-child(4).active svg path,
+.way-tab:nth-child(4):hover svg path {
     @apply fill-color-green
 }
 
@@ -376,7 +413,7 @@ strong.program-card__oldprice span.currency {
 }
 
 .review__title {
-    @apply text-xl leading-6 text-color-dark font-bold mb-2 -sm:text-base
+    @apply text-xl leading-6 text-color-dark font-bold mb-2 text-center -sm:text-base
 }
 
 .start-rating {
@@ -463,7 +500,11 @@ strong.program-card__oldprice span.currency {
 }
 
 .news-item__img img {
-    @apply w-full h-full object-cover object-center
+    @apply w-full h-full object-cover object-center transition-all
+}
+
+.news-item:hover .news-item__img img {
+    @apply scale-[1.1]
 }
 
 .news-item__img::after {
@@ -510,11 +551,12 @@ strong.program-card__oldprice span.currency {
 }
 
 .contact-tel {
-    @apply text-color-dark font-semibold text-[2rem] leading-[1em] mb-2 -md:text-2xl
+    @apply text-color-dark font-semibold transition-all hover:text-color-blue text-[2rem] leading-[1em] mb-2 -md:text-2xl
 }
 
+
 .contact-mail {
-    @apply font-semibold text-color-dark block w-max ml-auto -sm:mx-auto
+    @apply font-semibold text-color-dark block transition-all hover:text-color-blue  w-max ml-auto -sm:mx-auto
 }
 
 .footer-nav__item:not(:last-child) {
@@ -526,7 +568,7 @@ strong.program-card__oldprice span.currency {
 }
 
 .footer-nav__link {
-    @apply text-color-dark font-bold
+    @apply text-color-dark font-bold transition-all
 }
 
 .copy-divider {
@@ -538,11 +580,17 @@ strong.program-card__oldprice span.currency {
 }
 
 .copy a {
-    @apply text-color-blue
+    @apply text-color-blue transition-all hover:underline 
 }
+
+.copy aL
 
 .policy-list {
     @apply flex items-center mr-8 -sm:flex-col -sm:items-center -sm:mr-0 -sm:mb-4
+}
+
+.policy-list__item {
+    @apply -sm:text-center
 }
 
 .policy-list__item:not(:last-child) {
@@ -551,6 +599,14 @@ strong.program-card__oldprice span.currency {
 
 .policy-list__link {
     @apply text-xs leading-[1.5em] text-color-dark
+}
+
+.socials__link svg path {
+    @apply transition-all
+}
+
+.socials__link:hover svg path {
+    @apply fill-color-blue
 }
 
 #map { 
@@ -699,6 +755,10 @@ strong.program-card__oldprice span.currency {
 
     article.news-item {
         grid-area: auto !important;
+    }
+
+    .js-review-slider-pagination {
+        display: block;
     }
 }
 
