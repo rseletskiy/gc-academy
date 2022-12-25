@@ -32,9 +32,13 @@
 
     <!-- styles -->
     <link rel="stylesheet" href="./styles/index.css">
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+
 </head>
 
 <body class="font-montserrat bg-color-100 relative z-0">
+
+    
     <header class="header text-color-dark">
         <div class="w-[94%] mx-auto flex items-center justify-between">
             <div class="flex items-center">
@@ -82,6 +86,19 @@
             </div>
         </div>
     </header>
+
+
+    <model-viewer src="./assets/scene.glb" ar ar-modes="webxr scene-viewer quick-look" auto-rotate  poster="poster.webp" shadow-intensity="1">
+        <div class="progress-bar hide" slot="progress-bar">
+            <div class="update-bar"></div>
+        </div>
+        <button slot="ar-button" id="ar-button">
+            View in your space
+        </button>
+        <div id="ar-prompt">
+        </div>
+      </model-viewer> 
+
 
     <!-- mobile menu start -->
     <div class="m-menu-wrapper" id="mobile-menu">
@@ -2132,11 +2149,31 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script > 
+        const onProgress = (event) => {
+  const progressBar = event.target.querySelector('.progress-bar');
+  const updatingBar = event.target.querySelector('.update-bar');
+  updatingBar.style.width = `${event.detail.totalProgress * 100}%`;
+  if (event.detail.totalProgress === 1) {
+    progressBar.classList.add('hide');
+  } else {
+    progressBar.classList.remove('hide');
+    if (event.detail.totalProgress === 0) {
+      event.target.querySelector('.center-pre-prompt').classList.add('hide');
+    }
+  }
+};
+document.querySelector('model-viewer').addEventListener('progress', onProgress);
+    </script>
+
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <!-- Loads <model-viewer> for browsers: -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="./scripts/lang-select.js" type="module"></script>
     <script src="./scripts/app.js" type="module"></script>
     <script src="./scripts/map.js" type="module"></script>
+    <!-- <script src="./scripts/3d-cube.js" type="module"></script> -->
 </body>
 
 </html>
