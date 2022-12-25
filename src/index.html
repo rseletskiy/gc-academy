@@ -59,7 +59,12 @@
                 </nav>
             </div>
             <div class="flex items-center">
-                <div class="relative mr-24 -xl:mr-9 -sm:mr-6 lang-anime">
+                <div class="relative mr-24 -xl:mr-9 -sm:mr-6 lang-anime flex">
+                    <select class="dropdown">
+                        <option value="RU" selected>Русский</option>
+                        <option value="EN">English</option>
+                        <option value="KZ">Қазақ</option>
+                    </select>
                     <select data-custom-select-class="select">
                         <option value="Ru">
                             <span>Русский</span>
@@ -2135,6 +2140,7 @@
         </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="./scripts/lang-select.js" type="module"></script>
     <script src="./scripts/app.js" type="module"></script>
     <script src="./scripts/map.js" type="module"></script>
