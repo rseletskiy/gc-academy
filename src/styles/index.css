@@ -297,11 +297,11 @@ strong.program-card__oldprice span.currency {
 }
 
 .program-card__likes .extra {
-    @apply text-xs font-normal ml-2 whitespace-nowrap  invisible absolute
+    @apply text-xs font-normal ml-2 whitespace-nowrap hidden
 }
 
 .program-card__likes:hover .extra {
-    @apply  visible static
+    @apply block
 }
 
 .swiper.js-edu-slider {

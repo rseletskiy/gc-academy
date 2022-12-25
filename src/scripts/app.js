@@ -435,6 +435,8 @@ const eduSlider = new Swiper(".js-edu-slider", {
   keyboard: {
     enabled: true,
   },
+  loop: false,
+  centeredSlides:false,
   breakpoints: {
     320: {
       slidesPerView: 1,
