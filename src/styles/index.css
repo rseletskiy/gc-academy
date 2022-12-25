@@ -297,7 +297,7 @@ strong.program-card__oldprice span.currency {
 }
 
 .program-card__likes .extra {
-    @apply text-xs font-normal ml-2 whitespace-nowrap  invisible absolute w-max
+    @apply text-xs font-normal ml-2 whitespace-nowrap  invisible absolute
 }
 
 .program-card__likes:hover .extra {
