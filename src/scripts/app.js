@@ -1,9 +1,9 @@
-import Swiper, { EffectFade, Autoplay, Pagination, Navigation } from "swiper";
+import Swiper, { EffectFade, Autoplay, Pagination, Navigation, Mousewheel, Scrollbar } from "swiper";
 import anime from "animejs/lib/anime.es";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 
-Swiper.use([Navigation, Pagination, Autoplay, EffectFade]);
+Swiper.use([Navigation, Pagination, Autoplay, EffectFade, Mousewheel, Scrollbar]);
 
 const video = document.getElementById('video');
 
@@ -431,10 +431,11 @@ heroNextBtn.addEventListener("click", function (e) {
 const eduSlider = new Swiper(".js-edu-slider", {
   slidesPerView: 3,
   spaceBetween: 30,
-  mousewheel: true,
-  keyboard: {
-    enabled: true,
+  // cssMode: true,
+  mousewheel: {
+    forceToAxis: true,
   },
+  keyboard: true,
   loop: false,
   centeredSlides:false,
   breakpoints: {
@@ -452,9 +453,10 @@ const eduSlider = new Swiper(".js-edu-slider", {
       slidesPerView: 3,
     },
   },
-  pagination: {
-    el: ".js-edu-slider-pagination",
-    type: "progressbar",
+  scrollbar: {
+    el: ".js-edu-slider-scrollbar",
+    hide: false,
+    draggable: true,
   },
 });
 

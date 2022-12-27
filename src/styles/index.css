@@ -42,7 +42,8 @@ body::before {
 }
 
 .btn-border {
-    @apply text-color-blue uppercase text-sm py-[23px] px-14 border border-color-blue rounded-[50px] font-semibold block w-max transition-all hover:bg-color-blue hover:text-white -sm:text-[10px] -sm:leading-[1.4em] -sm:py-5 
+    transition: all .4s ease;
+    @apply text-color-blue uppercase text-sm py-[23px] px-14 border border-color-blue rounded-[50px] font-semibold block w-max hover:bg-color-blue hover:text-white -sm:text-[10px] -sm:leading-[1.4em] -sm:py-5 
 }
 
 .btn-border-sm {
@@ -308,11 +309,13 @@ strong.program-card__oldprice span.currency {
     overflow: visible;
 }
 
-.js-edu-slider-pagination.swiper-pagination-progressbar {
+.js-edu-slider-pagination.swiper-pagination-progressbar,
+.js-edu-slider-scrollbar.swiper-scrollbar {
     @apply static mt-12 bg-[#1B1D2B] rounded-4xl h-[2px]
 }
 
-.js-edu-slider-pagination.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+.js-edu-slider-pagination.swiper-pagination-progressbar .swiper-pagination-progressbar-fill,
+.js-edu-slider-scrollbar.swiper-scrollbar .swiper-scrollbar-drag {
     @apply bg-color-blue rounded-4xl
 }
 

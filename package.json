@@ -11,7 +11,7 @@
     "push-gh-pages": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
   },
   "staticFiles": {
-    "staticOutPath": "./gc-academy/src/assets/models",
+    "staticOutPath": "./src/assets/models",
     "staticPath": "./src/assets/models"
   },
   "keywords": [],
@@ -32,6 +32,8 @@
     "leaflet": "1.9.3",
     "normalize.css": "8.0.1",
     "swiper": "8.4.5",
-    "three": "^0.148.0"
+    "three": "^0.148.0",
+    "typedoc": "^0.11.1",
+    "typedoc-plugin-nojekyll": "^1.0.1"
   }
 }
