@@ -40,23 +40,7 @@
 
 </head>
 
-<body class="font-montserrat bg-color-100 relative z-0">
-
-    <!-- <model-viewer src="./assets/scene.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls shadow-intensity="1">
-        <div class="progress-bar hide" slot="progress-bar">
-            <div class="update-bar"></div>
-        </div>
-        <button slot="ar-button" id="ar-button">
-            View in your space
-        </button>
-        <div id="ar-prompt">
-        </div>
-    </model-viewer> -->
-
-    <model-viewer style="width: 100%;  height: 90vh;" camera-controls
-        src="./assets/scene.glb" camera-controls environment-image="neutral"
-        poster="./js/config.json" shadow-intensity="1" exposure="1"
-        shadow-softness="0"> </model-viewer>
+<body class="font-montserrat bg-color-100 relative z-0">  
 
     <header class="header text-color-dark">
         <div class="w-[94%] mx-auto flex items-center justify-between">
@@ -422,8 +406,12 @@
                             class="w-[70.6081%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute -z-1 rotate-45">
                             <div class="cube bg-blue-gradient rounded-4xl " data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300"></div>
                         </div>
-                        <img src="./assets/about-cube-main.png" data-aos="fade-up" data-aos-duration="500" data-aos-delay="600" draggable="false"
-                            class="w-[85.9797%] h-auto mx-auto z-1"  alt="Cube">
+                        <!-- <img src="./assets/about-cube-main.png" data-aos="fade-up" data-aos-duration="500" data-aos-delay="600" draggable="false"
+                            class="w-[85.9797%] h-auto mx-auto z-1"  alt="Cube"> -->
+                            <div class="w-full before:block before:pb-[100%] h-auto mx-auto z-1">
+                                <model-viewer style="width: 100%;  height: 100%;" src="https://vse3d.ru/clients/Morelli/Cube/Cube 4/scene.glb" class="w-full h-full absolute top-0 left-0 mx-auto z-1" environment-image="neutral" poster="./scripts/config.json" shadow-intensity="1" exposure="1" camera-orbit="45deg 115deg" shadow-softness="0" auto-rotate> </model-viewer>
+                            </div>
+                        
 
                         <!-- <iframe src="https://vse3d.ru/clients/Morelli/Cube/Cube%204/vse3d-snippet.html?nocache=0.9618310658567215" class="w-[85.9797%] h-auto mx-auto z-1"  frameborder="0"></iframe> -->
 
