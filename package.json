@@ -11,7 +11,7 @@
     "push-gh-pages": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
   },
   "staticFiles": {
-    "staticOutPath": "./src/assets/models",
+    "staticOutPath": "./",
     "staticPath": "./src/assets/models"
   },
   "keywords": [],
